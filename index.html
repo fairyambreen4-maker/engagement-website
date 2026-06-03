@@ -6,6 +6,26 @@
     <title>Engagement Celebrations</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  <div id="lightbox">
+    <img id="preview" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll(".photos img");
+    const lightbox = document.getElementById("lightbox");
+    const preview = document.getElementById("preview");
+
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        preview.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
   <body>
     <header>
       <h1>"Engagement Celebration"</h1>
